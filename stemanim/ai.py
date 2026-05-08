@@ -7,18 +7,26 @@ def mock_generate_spec(notes: str) -> AnimationSpec:
         target_level="first-year linear algebra",
         scenes=[
             {
-                "title": "The eigenvalue equation",
-                "kind": "equation_sequence",
-                "narration": (
+                "pattern": "definition_reveal",
+                "title": "Eigenvectors",
+                "term": "Eigenvector",
+                "definition": (
                     "An eigenvector is a nonzero vector whose direction is "
                     "preserved by a linear transformation."
                 ),
+                "formula": r"A\mathbf{v} = \lambda \mathbf{v}",
+            },
+            {
+                "pattern": "equation_sequence",
+                "title": "The eigenvalue equation",
                 "equations": [
-                    {
-                        "latex": r"A\mathbf{v} = \lambda \mathbf{v}",
-                        "narration": "The matrix A transforms v into a scalar multiple of itself.",
-                    }
+                    r"A\mathbf{v} = \lambda \mathbf{v}",
+                    r"A\mathbf{v} \text{ is parallel to } \mathbf{v}",
                 ],
-            }
+                "captions": [
+                    "The matrix A transforms v into a scalar multiple of itself.",
+                    "So the direction is unchanged.",
+                ],
+            },
         ],
     )

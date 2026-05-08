@@ -1,0 +1,34 @@
+{
+  "topic": "Eigenvectors",
+  "target_level": "first-year linear algebra",
+  "scenes": [
+    {
+      "pattern": "definition_reveal",
+      "title": "Eigenvectors",
+      "term": "Eigenvector",
+      "definition": "An eigenvector keeps its direction under a linear transformation.",
+      "formula": "A\\mathbf{v} = \\lambda \\mathbf{v}"
+    },
+    {
+      "pattern": "equation_sequence",
+      "title": "The eigenvalue equation",
+      "equations": [
+        "A\\mathbf{v} = \\lambda \\mathbf{v}",
+        "A\\mathbf{v} \\text{ is parallel to } \\mathbf{v}"
+      ],
+      "captions": [
+        "The output is a scalar multiple of the input vector.",
+        "So the direction is unchanged."
+      ]
+    },
+    {
+      "pattern": "vector_transform",
+      "title": "A vector stretched by a matrix",
+      "matrix": [[2, 0], [0, 1]],
+      "vector": [1, 0],
+      "before_label": "\\mathbf{v}",
+      "after_label": "A\\mathbf{v}",
+      "equation": "A\\mathbf{v} = 2\\mathbf{v}"
+    }
+  ]
+}
