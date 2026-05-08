@@ -1,0 +1,26 @@
+from manim import *
+
+
+class GeneratedScene(Scene):
+    def construct(self):
+        title = Text("{{ spec.topic }}").scale(0.8)
+        self.play(Write(title))
+        self.wait(1)
+        self.play(title.animate.to_edge(UP))
+
+        {% for scene in spec.scenes %}
+        subtitle = Text("{{ scene.title }}").scale(0.55).next_to(title, DOWN)
+        self.play(Write(subtitle))
+        self.wait(1)
+
+        {% for eq in scene.equations %}
+        eq_obj = MathTex(r"{{ eq.latex }}").scale(1.1)
+        self.play(Write(eq_obj))
+        self.wait(2)
+        self.play(FadeOut(eq_obj))
+        {% endfor %}
+
+        self.play(FadeOut(subtitle))
+        {% endfor %}
+
+        self.wait(1)
